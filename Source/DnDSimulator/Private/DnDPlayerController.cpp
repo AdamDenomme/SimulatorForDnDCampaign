@@ -52,6 +52,7 @@ void ADnDPlayerController::Tick(float DeltaSeconds)
 
 void ADnDPlayerController::SetInputModeGameOnly(bool InConsumeCaptureMouseDown)
 {
+    // Sets input mode to Mouse down and hold (No Double Click to Drag Object)
     FInputModeGameOnly InputMode;
     InputMode.SetConsumeCaptureMouseDown(
         InConsumeCaptureMouseDown);
@@ -111,6 +112,7 @@ void ADnDPlayerController::DragObject()
 
 void ADnDPlayerController::DropObject()
 {
+    // If Object is being carried, Object is no longer being carried/hit
     if (HitActor)
     {
         HitActor = nullptr;
